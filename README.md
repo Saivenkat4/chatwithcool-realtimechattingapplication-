@@ -1,14 +1,17 @@
 // first -> inside chatwithcool
 1. npm init -y
 
-// secound -> express
+// secound -> express 
+
 2. npm install express Socket.io --save
 
 //third -> create a public folder which stores html,css,js files
 mkdir public
+
 3. create a server.js for node.js
 
 // to run the code and surely be in chatwithcool folder path
+
 4. node server.js
 
 //main used to give permission to {input tag}
