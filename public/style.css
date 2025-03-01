@@ -1,0 +1,284 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, 
+        #ADD8E6,  /* Light Blue */
+        #87CEEB,  /* Sky Blue */
+        #4682B4,  /* Steel Blue */
+        #4169E1,  /* Royal Blue */
+        #1E90FF,  /* Dodger Blue */
+        #0000CD,  /* Medium Blue */
+        #00008B   /* Dark Blue */
+    );
+}
+
+.app {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    background: linear-gradient(135deg, 
+        #15365D,  /* Deep Steel Blue */
+        #1A4A80,  /* Strong Blue */
+        #2062A0,  /* Bright Navy */
+        #2A7EBD,  /* Soft Ocean Blue */
+        #3498DB,  /* Sky Blue */
+        #5DADE2,  /* Soft Azure */
+        #85C1E9   /* Light Blue */
+    );
+    border-left: 1px solid #dcdfe4;
+    border-right: 1px solid #dcdfe4;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+/* Screens visibility */
+.app > .screen {
+    display: none;
+}
+
+.app > .screen.active {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Join Screen */
+.screen .form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    background: #eee7e7;
+    padding: 25px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.screen h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: #040404;
+    border-bottom: 4px solid #0077b6;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.screen .form-input {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.screen .form-input label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.screen .form-input input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #0b0000;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.screen .form-input button {
+    width: 100%;
+    padding: 12px;
+    background: #09c6f1;
+    color: #090404;
+    font-size: 18px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.screen .form-input button:hover {
+    background: #055e8a;
+}
+
+/* Chat Screen */
+.chat-screen .header {
+    background: #00a2f9;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    color: rgb(8, 2, 2);
+    font-weight: bold;
+}
+
+.chat-screen .header button {
+    padding: 8px 12px;
+    border: none;
+    background: white;
+    color: #0077b6;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+.chat-screen .header button:hover {
+    background: #005f8f;
+    color: white;
+}
+
+/* Messages */
+.chat-screen .messages {
+    width: 100%;
+    height: calc(100% - 130px);
+    background: #f1f5f9;
+    overflow-y: auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Chat bubbles */
+.chat-screen .messages .message {
+    display: flex;
+    margin-bottom: 12px;
+    align-items: flex-start;
+}
+
+.chat-screen .messages .message > div {
+    max-width: 75%;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 16px;
+    word-wrap: break-word;
+    transition: 0.3s ease-in-out;
+    line-height: 1.4;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* My Message */
+.chat-screen .messages .message.my-message {
+    justify-content: flex-end;
+}
+
+.chat-screen .messages .message.my-message > div {
+    max-width: 75%; /* Increased width for better readability */
+    padding: 14px 18px; /* More padding for a spacious look */
+    font-size: 16px; /* Slightly larger text */
+    background: linear-gradient(135deg,  
+        #0061A8,  /* Rich Deep Blue */
+        #007EC6,  /* Bright Sky Blue */
+        #0099E6,  /* Electric Blue */
+        #00B4D8,  /* Aqua Blue */
+        #48CAE4,  /* Soft Cyan */
+        #90E0EF   /* Pastel Blue */
+    );
+    color: rgb(247, 246, 246);
+    text-align: right;
+    border-bottom-right-radius: 3px;
+    padding: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 162, 255, 0.4); /* Soft Blue Glow */
+}
+
+
+/* Other User's Message */
+.chat-screen .messages .message.other-message {
+    justify-content: flex-start;
+}
+
+.chat-screen .messages .message.other-message > div {
+    max-width: 85%; /* Increased width for better readability */
+    padding: 14px 18px; /* More padding for a spacious look */
+    font-size: 16px; /* Slightly larger text */
+    background: linear-gradient(135deg,  
+        #1E3A8A,  /* Navy Blue */
+        #2563EB,  /* Bright Royal Blue */
+        #3B82F6,  /* Strong Blue */
+        #60A5FA,  /* Light Sky Blue */
+        #93C5FD   /* Soft Pastel Blue */
+    );
+    margin: 5px;
+    color: white;
+    text-align: right;
+    border-radius: 12px;
+    border-bottom-left-radius: 3px;
+    box-shadow: 0px 5px 15px rgba(0, 132, 255, 0.5); /* Soft Blue Glow */
+}
+
+
+/* Typebox */
+.chat-screen .typebox {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    padding: 5px;
+    background: white;
+    border-top: 1px solid #ddd;
+    position: relative;
+    bottom: 1px;
+}
+
+.chat-screen .typebox input {
+    flex: 1;
+    height: 50px;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+}
+
+.chat-screen .typebox button {
+    width: 90px;
+    height: 100%;
+    background: #0077b6;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 8px;
+    transition: 0.3s ease-in-out;
+}
+
+.chat-screen .typebox button:hover {
+    background: #005f8f;
+}
+
+/* System Messages (Joined/Left) */
+.chat-screen .messages .message.system-message {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin: 10px 0;
+}
+
+.chat-screen .messages .message.system-message .system-text {
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+    padding: 10px 15px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 114, 255, 0.3);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    animation: fadeIn 0.3s ease-in-out;
+}
